@@ -575,8 +575,7 @@ describe('Posts API', function () {
             .expect(200);
 
         model = await models.Post.findOne({
-            id: id,
-            status: 'published'
+            id: id
         }, testUtils.context.internal);
         should(model.get('newsletter_id')).eql(newsletterId);
 
@@ -594,8 +593,7 @@ describe('Posts API', function () {
             .expect(200);
 
         model = await models.Post.findOne({
-            id: id,
-            status: 'draft'
+            id: id
         }, testUtils.context.internal);
         should(model.get('newsletter_id')).eql(newsletterId);
 
@@ -613,8 +611,7 @@ describe('Posts API', function () {
             .expect(200);
 
         model = await models.Post.findOne({
-            id: id,
-            status: 'published'
+            id: id
         }, testUtils.context.internal);
         should(model.get('newsletter_id')).eql(newsletterId);
     });
